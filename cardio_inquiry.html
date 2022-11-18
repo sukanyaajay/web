@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>cardio inquiry</title>
+<link href="Css/style.css" rel="stylesheet" type="text/css" />
+
+<script  type="text/javascript">
+function submitform()
+{
+	
+	var a = document.forms['inquiryform']['txtname'].value;
+	var e = document.forms['inquiryform']['txtmsg'].value;
+	var f = document.forms['inquiryform']['txtemail'].value;
+	var str = /^[A-Za-z ]+$/;
+	var email = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+	var b = document.forms['inquiryform']['txtmobile'].value;
+	var phone = /^\d{10}$/;
+	
+		if( a == "" )
+		{	
+			alert("Please enter name");
+			return false;
+		}
+		if(!a.match(str))
+		{
+			alert("Name must contain only letters");
+			return false;
+		}
+		if(b.length != 10)
+		{
+			alert("Mobile number should be of 10 digits");
+					return false;
+		}
+		else
+		{
+			if(!b.match(phone))
+			{
+				alert("Mobile number should consist only of digits");
+				return false;
+			}
+		}
+		if( f == "" )
+		{	
+			alert("Please enter Email address");
+			return false;
+		}
+		if(!f.match(email))
+		{
+			alert("Email address must of valid format");
+			return false;
+		}
+	
+		if( e == "" )
+		{	
+			alert("Please enter Message");
+			return false;
+		}
+		document.getElementById('msgsent').style.display = 'table-row';
+		return false;
+		
+}
+</script>
+<style type="text/css">
+#msgsent	{ display:none;	}
+</style>
+</head>
+
+<body class="s1">
+
+	<div class="whole">
+    	<div class="head">
+			<table >
+			  <tr ><td align="left"><img src="img/5.jpg" alt="image" height="200"/></td>
+			  <td class="style2" align="center">Let us know your doubts</td>
+			</tr>
+			</table>
+		  </div>
+		  <div class="middle">
+			<table width="98%">
+				 <tr>
+				<td> <div align="left"><span class="style6">&laquo;</span> <a href="index.html" class="style10">back to home</a></div></td>	
+			  </tr>
+			</table>
+			<p>&nbsp;</p>
+<form method="post"	 name="inquiryform" id="inquiryform" action="" onsubmit="return submitform()">
+          <table width="100%">
+              <tr>
+                <td colspan="2"><div align="center"><font size="+3" color="#006633">INQUIRY FORM</font></div></td>
+              </tr>
+			
+			<tr><td width="45%" height="30px"></td></tr>
+			<tr><td></td></tr>
+  			
+              <tr id="msgsent">
+                <td colspan="2"><div align="center">We recieved your message!</div></td>
+              </tr>
+			
+              <tr>
+                <td width="45%" align="right">Name :</td>
+                <td width="65%" align="left"><label>
+                  <input type="text" name="txtname" id="txtname" />
+                </label></td>
+				</tr>
+              <tr>
+                <td width="35%" align="right">Mobile No. :</td>
+                <td width="65%" align="left"><input type="text" name="txtmobile" id="txtmobile" /></td>
+              </tr>
+              <tr>
+                <td width="35%" align="right">Email :</td>
+                <td width="65%" align="left"><input type="text" name="txtemail" id="txtemail" /></td>
+              </tr>
+            
+              <tr>
+                <td width="35%" align="right" valign="top">Message :</td>
+                <td width="65%" align="left" colspan="1"><textarea name="txtmsg" rows="10" id="txtmsg" cols="20"></textarea></td>
+              </tr>
+			  <tr><td width="45%" height="30px"></td></tr>
+			  <tr><td></td></tr>
+              <tr>
+                <td colspan="2" align="right"><div align="center">
+                  <label>
+                  <input type="submit" name="btnsubmit" id="btnsubmit" value="Submit" />
+                  </label>
+                </div></td>
+              </tr>
+			</table>
+</form>
+<!--end of middle-->
+
+    </div><!--end of whole-->
+	        
+<div class="footer">
+	
+	<div>
+		<hr/>
+		</div>
+	<div align="center"><a href="#whole">Back to top</a></div>
+ </div><!--end of footer-->
+ </div>
+</body>
+</html>
